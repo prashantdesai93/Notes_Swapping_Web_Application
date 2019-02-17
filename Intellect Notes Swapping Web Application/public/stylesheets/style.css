@@ -1,0 +1,235 @@
+
+@charset "UTF-8";
+
+.logo{
+  background-image: url("../images/notes.png");
+  height: 90px;
+  width: 91px;
+  margin-left: 4%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 130% 95%;
+}
+
+.page-header{
+  border-bottom: none !important;
+  margin: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+article, aside, header, footer, main nav, section{
+  display: block;
+}
+
+.header{
+  margin-right:0 !important;
+  background-color:#676767 !important;
+}
+.headStyle{
+  font-size: 5rem !important;
+  font-family: vivaldi !important;
+  font-weight: bold !important;
+  color: #8dc7fa !important;
+  margin-left: 2% !important;
+}
+.sloganStyle{
+  font-size: 2rem !important;
+  font-family: bodoni MT !important;
+  font-weight: bold !important;
+  color: #3fccd7 !important;
+}
+.footer{
+  padding: 5px;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background-color:#676767;
+}
+.nav-pills>li+li {
+  margin-left: 0px !important;
+}
+
+.navHeaderStyle{
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.container{
+  width: 100%;
+}
+.sidenav {
+  width: 20%;
+  height: 100%;
+  /*position: fixed;*/
+  position: absolute;
+  z-index: 1;
+  top: 138px;
+  background: #676767c2;
+  overflow-x: hidden;
+  padding: 8px 0;
+}
+
+.sidenav a {
+  padding: 8% 8% 8% 8%;
+  text-decoration: none;
+  font-size: 25px;
+  color: #337ab7;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #064579;
+}
+
+/*Breadcumb*/
+
+ul.breadcrumb {
+  padding: 10px 16px;
+  margin-left: 20%;
+  list-style: none;
+  background-color: #fff;
+}
+ul.breadcrumb li {
+  display: inline;
+  font-size: 18px;
+}
+ul.breadcrumb li+li:before {
+  padding: 8px;
+  color: black;
+  content: "/\00a0";
+}
+ul.breadcrumb li a {
+  color: #0275d8;
+  text-decoration: none;
+}
+ul.breadcrumb li a:hover {
+  color: #01447e;
+  text-decoration: underline;
+}
+
+.mainContentStyle{
+  margin-left: 21%;
+  font-size: 2.5rem !important;
+  font-family: bodoni MT !important;
+  font-weight: bold !important;
+}
+
+.radioButtonHeaderStyle{
+  margin-left: 21%;
+  margin-top: 2%;
+  font-size: 3rem !important;
+  font-family: bodoni MT !important;
+  font-weight: bold !important;
+}
+
+.radioButtonStyle{
+  margin-left: 21%;
+  font-size: 1.5rem !important;
+  font-family: bodoni MT !important;
+  font-weight: bold !important;
+}
+
+.dropdown{
+  margin-top: 2%;
+}
+
+.intSys{
+  margin-top: 5%;
+}
+
+.intSys button, .dataSci button{
+  font-size: 2rem;
+}
+
+.itemImage{
+  /*background-image: url("../images/dbSystems.jpg");*/
+  height: 200px;
+  width: 150px;
+  /*background-position: center;*/
+  background-repeat: no-repeat;
+  /*background-size: 100% 110%;*/
+}
+
+.itemImage1{
+  background-image: url("../images/dbSystems.jpg");
+  height: 200px;
+  width: 150px;
+  /*background-position: center;*/
+  background-repeat: no-repeat;
+  /*background-size: 100% 110%;*/
+}
+
+.itemDescription{
+  margin-top:2%;
+  margin-left: 21%;
+  font-size: 2rem !important;
+  font-family: bodoni MT !important;
+}
+
+.SwapItemDescription{
+  margin-top:2%;
+  font-size: 2rem !important;
+  font-family: bodoni MT !important;
+}
+
+.itemDescription .briefDesc, .SwapItemDescription .briefDesc {
+  font-weight: bold;
+}
+
+.confirmSwap{
+  float: right;
+  margin-right: 5%;
+}
+
+.tableRow{
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.horizontalLine{
+  border: 1px solid blue;
+  margin-right: 0%;
+}
+
+.ratingStar{
+  color: #337ab7;
+  border-color: #2e6da4;
+}
+
+.loginPage{
+  text-align: -webkit-center;
+}
+
+.emailTag{
+
+}
+
+.errorMsg{
+  color: red;
+}
+
+.loginName{
+  float:right;
+  color:#fff;
+  margin-top: 1.6em;
+  font-size: 20px;
+}
+
+.logout{
+  margin-top: 0.9em;
+  color: #8dc7fa;
+  font-size: 30px;
+}
+
+.authBtn{
+  margin-top: 2%;
+}
+
+.tableSpacing{
+  padding-top: 5%;
+}

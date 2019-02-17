@@ -1,0 +1,14 @@
+<ul class="nav nav-pills row" style="background: #b3d2fd;">
+    <%if(data.user){%>
+        <!--<li class="col-sm-3 col-md-3 col-lg-3 navHeaderStyle"><a data-target="pill" href="#menu1">Sign Out</a></li>-->
+        <li class="col-sm-4 col-md-4 col-lg-4 navHeaderStyle"><a data-target="pill" href="/myItems">My Notes</a></li>
+        <li class="col-sm-4 col-md-4 col-lg-4 navHeaderStyle"><a data-target="pill" href="/mySwaps">My Swaps</a></li>
+        <li class="col-sm-4 col-md-4 col-lg-4 navHeaderStyle"><a data-target="pill" href="#menu4">Carts</a></li>
+    <%} else{%>
+        <li class="col-sm-3 col-md-3 col-lg-3 navHeaderStyle"><a data-target="pill" href="/users/login">Sign In</a></li>
+        <li class="col-sm-3 col-md-3 col-lg-3 navHeaderStyle"><a data-target="pill" href="/myItems">My Notes</a></li>
+        <li class="col-sm-3 col-md-3 col-lg-3 navHeaderStyle"><a data-target="pill" href="/mySwaps">My Swaps</a></li>
+        <li class="col-sm-3 col-md-3 col-lg-3 navHeaderStyle"><a data-target="pill" href="#menu4">Carts</a></li>
+    <%}%>
+
+</ul>

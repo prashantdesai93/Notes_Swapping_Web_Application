@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Intellect Notes Swap</title>
+    <meta charset="utf-8">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">-->
+    <link type="text/css" rel="stylesheet" href="/stylesheets/style.css" />
+
+    <!--[if lt IE 9]>
+    <script>
+        document.createElement("article");
+        document.createElement("aside");
+        document.createElement("header");
+        document.createElement("footer");
+        document.createElement("main");
+        document.createElement("nav");
+        document.createElement("section");
+    </script>
+    <![endif]-->
+</head>
+<body>
+
+<header>
+    <% include partials/header %>
+</header>
+
+<div class="container">
+    <% include partials/user-navigation %>
+
+    <div class="tab-content">
+        <div id="menu1" class="tab-pane fade in active">
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-9 loginPage">
+                    <h3>Register</h3>
+                    <form action="/users/signupUser" method="POST">
+                        <table>
+                            <tr>
+                                <td>
+                                    <label for="fname"><b>First Name</b></label></td><td>
+                                    <input type="text" placeholder="Enter First Name" name="fname" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tableSpacing">
+                                    <label for="lname"><b>Last Name</b></label></td><td>
+                                    <input type="text" placeholder="Enter Last Name" name="lname" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tableSpacing">
+                                    <label for="email"><b>Email</b></label></td><td>
+                                    <input type="email" placeholder="Enter Email" name="email" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tableSpacing">
+                                    <label for="addr"><b>Apt & Block No.</b></label></td><td>
+                                    <input type="text" placeholder="Enter Address" name="addr">
+                                </td>
+                            </tr>
+                            <!--<tr>-->
+                                <!--<td class="tableSpacing">-->
+                                    <!--<label for="addr"><b></b></label></td><td>-->
+                                    <!--<input type="text" placeholder="Enter Address (Optional)" name="addr2" >-->
+                                <!--</td>-->
+                            <!--</tr>-->
+                            <tr>
+                                <td class="tableSpacing">
+                                    <label for="city"><b>City</b></label></td><td>
+                                    <input type="text" placeholder="Enter City" name="city" >
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tableSpacing">
+                                    <label for="state"><b>State</b></label></td><td>
+                                    <input type="text" placeholder="Enter State" name="state" >
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tableSpacing">
+                                    <label for="country"><b>Country</b></label></td><td>
+                                    <input type="text" placeholder="Enter Country" name="country" >
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tableSpacing">
+                                    <label for="zip"><b>Zip Code</b></label></td><td>
+                                    <input type="text" placeholder="Enter Zip Code" name="zip" >
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tableSpacing">
+                                    <label for="psw"><b>Password</b></label></td><td>
+                                    <input type="password" placeholder="Enter Password" name="psw" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tableSpacing">
+                                    <label for="psw"><b>Confirm Password &nbsp;&nbsp;</b></label></td><td>
+                                    <input type="password" placeholder="Confirm Password" name="psw" required>
+                                </td>
+                            </tr>
+                        </table>
+                        <button class="authBtn" onclick="location.href = '/users/login'">Cancel</button>
+                        <input class="authBtn" type="submit" value="Sign In" />
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="menu2" class="tab-pane fade"></div>
+        <div id="menu3" class="tab-pane fade"></div>
+        <div id="menu4" class="tab-pane fade"></div>
+    </div>
+</div>
+
+<% include partials/site-navigation %>
+
+<footer>
+    <% include partials/footer %>
+</footer>
+
+<script src="/javascripts/main.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+
+</html>

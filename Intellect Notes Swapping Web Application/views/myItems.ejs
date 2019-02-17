@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Intellect Notes Swap</title>
+    <meta charset="utf-8">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">-->
+    <link type="text/css" rel="stylesheet" href="/stylesheets/style.css" />
+
+    <!--[if lt IE 9]>
+    <script>
+        document.createElement("article");
+        document.createElement("aside");
+        document.createElement("header");
+        document.createElement("footer");
+        document.createElement("main");
+        document.createElement("nav");
+        document.createElement("section");
+    </script>
+    <![endif]-->
+</head>
+<body>
+
+<header>
+    <% include partials/header %>
+</header>
+
+<div class="container">
+    <% include partials/user-navigation %>
+
+    <div class="tab-content">
+        <div id="menu1" class="tab-pane fade"></div>
+        <div id="menu2" class="tab-pane fade in active">
+            <ul class="breadcrumb">
+                <li><a href="/">Home</a></li>
+                <li><a href="/categories">Categories</a></li>
+                <li><a href="/myItems">my notes</a></li>
+            </ul>
+            <p class="mainContentStyle">University of North Carolina at Charlotte's study notes for swap</p>
+            <div class="itemDescription">
+                <%if(data.myItems.length<1){%>
+                    <div><p>You do not have any items</p></div>
+                <%}else{%>
+                <div class="row">
+                    <div class="col-md-4 col-lg-4 briefDesc">Notes</div>
+                    <div class="col-md-3 col-lg-3 briefDesc">Category</div>
+                    <div class="col-md-2 col-lg-2 briefDesc">My Rating</div>
+                    <div class="col-md-1 col-lg-1 briefDesc">Swapped</div>
+                    <div class="col-md-2 col-lg-2 briefDesc"></div>
+                </div>
+                <div class="row horizontalLine"></div>
+
+                <%for(var i=0; i< data.myItems.length; i++){%>
+                <div class="row tableRow">
+                    <div class="col-md-4 col-lg-4"><%= data.myItems[i].itemName %></div>
+                    <div class="col-md-2 col-lg-3"><%= data.myItems[i].catalogCategory %></div>
+                    <div class="col-md-2 col-lg-2">
+                        <%for(var j=0; j< data.myItems[i].rating; j++){%>
+                        <span class="glyphicon glyphicon-star ratingStar" aria-hidden="true"></span>
+                        <%}%>
+                    </div>
+                    <div class="col-md-1 col-lg-1">
+                            <%if(data.myItems[i].status == 'available' ){%>
+                                <button type="button" class="btn btn-primary btn-md">
+                                    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                                </button>
+                                <h6>Available</h6>
+                            <%}%>
+
+                        <%if(data.myItems[i].status == 'pending' ){%>
+                                <button type="button" class="btn btn-primary btn-md">
+                                    <span class="glyphicon glyphicon-repeat" aria-hidden="true"></span>
+                                </button>
+                                <h6>Pending</h6>
+                        <%}%>
+                        <%if(data.myItems[i].status == 'swapped' ){%>
+                                <button type="button" class="btn btn-primary btn-md">
+                                    <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+                                </button>
+                                <h6>Swapped</h6>
+                        <%}%>
+                    </div>
+                    <div class="col-md-2 col-lg-2">
+                        <button type="button" class="btn btn-primary btn-md" onclick="location.href = '/myItems/update/<%= data.myItems[i].itemCode %>'">Update</button>
+                        <button type="button" class="btn btn-primary btn-md" onclick="location.href = '/myItems/delete/<%= data.myItems[i].itemCode %>'">Delete</button>
+                    </div>
+                </div>
+                <% }%>
+                <div class="row horizontalLine"></div>
+                <%}%>
+            </div>
+        </div>
+        <div id="menu3" class="tab-pane fade"></div>
+        <div id="menu4" class="tab-pane fade"></div>
+    </div>
+</div>
+
+<% include partials/site-navigation %>
+
+<footer>
+    <% include partials/footer %>
+</footer>
+
+
+<script src="/javascripts/main.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+
+</html>

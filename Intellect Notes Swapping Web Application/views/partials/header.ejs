@@ -1,0 +1,23 @@
+<div class="row header">
+    <div class="col-sm-2 col-md-2 col-lg-2 logo"></div>
+    <div class="col-sm-7 col-md-7 col-lg-7">
+        <div class="page-header">
+            <h3 class="headStyle">Intellect Notes Swap <small class="sloganStyle">Swap and Learn</small></h3>
+        </div>
+    </div>
+
+    <div class="col-sm-2 col-md-2 col-lg-2">
+        <%if(data.user){%>
+            <p class="loginName">Welcome <%= data.user.firstName%></p>
+        <%}else {%>
+            <p class="loginName">Not signed in.</p>
+        <%}%>
+    </div>
+    <div class="col-sm-1 col-md-1 col-lg-1">
+        <%if(data.user){%>
+            <a href="/logout">
+                <span class="logout glyphicon glyphicon-log-out"></span>
+            </a>
+        <%}%>
+    </div>
+</div>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Intellect Notes Swap</title>
+    <meta charset="utf-8">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">-->
+    <link type="text/css" rel="stylesheet" href="/stylesheets/style.css" />
+
+    <!--[if lt IE 9]>
+    <script>
+        document.createElement("article");
+        document.createElement("aside");
+        document.createElement("header");
+        document.createElement("footer");
+        document.createElement("main");
+        document.createElement("nav");
+        document.createElement("section");
+    </script>
+    <![endif]-->
+</head>
+<body>
+
+<header>
+    <% include partials/header %>
+</header>
+
+<div class="container">
+    <% include partials/user-navigation %>
+
+    <div class="tab-content">
+        <div id="menu1" class="tab-pane fade"></div>
+        <div id="menu2" class="tab-pane fade in active">
+            <ul class="breadcrumb">
+                <li><a href="/">Home</a></li>
+                <li><a href="/categories">Categories</a></li>
+                <li><a href="/mySwaps">my swaps</a></li>
+            </ul>
+            <p class="mainContentStyle">University of North Carolina at Charlotte's swap offers</p>
+            <div class="itemDescription">
+                <%if(data.length<1){%>
+                    <div><p>You do not have any items</p></div>
+                <%}else{%>
+                <div class="row">
+                    <div class="col-md-4 col-lg-4 briefDesc">Notes</div>
+                    <div class="col-md-4 col-lg-4 briefDesc">Swap Offer</div>
+                    <div class="col-md-4 col-lg-4 briefDesc"></div>
+                </div>
+                <div class="row horizontalLine"></div>
+                    <%data[0]%>
+                    <%for(var i=0; i< data.length; i++){%>
+                        <div class="row tableRow">
+                            <div class="col-md-4 col-lg-4"><a href="/item/<%= data[i].item.itemCode %>"><%= data[i].item.itemName %></a></div>
+                            <div class="col-md-4 col-lg-4"><a href="/item/<%= data[i].swapItem.itemCode %>"><%= data[i].swapItem.itemName %></a></div>
+                            <div class="col-md-4 col-lg-4">
+                                <%if(data[i].item.offerBy == data[i].item.userId){%>
+                                    <button type="button" class="btn btn-primary btn-md check" onclick="location.href = '/mySwaps/withdraw/<%= data[i].offerId %>'">Withdraw</button>
+                                <%} else{%>
+                                <button type="button" class="btn btn-primary btn-md check" >Accept</button>
+                                <button type="button" class="btn btn-primary btn-md check" >Reject</button>
+                                <%}%>
+                            </div>
+                        </div>
+                    <% }%>
+                    <%}%>
+                <div class="row horizontalLine"></div>
+            </div>
+        </div>
+        <div id="menu3" class="tab-pane fade"></div>
+        <div id="menu4" class="tab-pane fade"></div>
+    </div>
+</div>
+
+<% include partials/site-navigation %>
+
+<footer>
+    <% include partials/footer %>
+</footer>
+
+
+<script src="/javascripts/main.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+
+</html>
